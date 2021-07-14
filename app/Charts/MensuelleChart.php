@@ -55,7 +55,9 @@ class MensuelleChart extends BaseChart
                 $year = $year - 1 ;
                 $month = 12 ;
               }
+              $month = str_pad(strval($month), 2, '0', STR_PAD_LEFT);        
               }  
+
               [$keys, $values] = Arr::divide($totale);
               $n = sizeof($totale);
               $inkeys[] = [];

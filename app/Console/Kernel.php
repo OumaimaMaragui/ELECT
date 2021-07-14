@@ -28,15 +28,17 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        //$schedule->job(new Notif)->everyMinute();
-        $schedule->command('actualite:send')
-        ->everyMinute();
-        $schedule->command('mensualite:suggest')
-        ->everyMinute();
-        $schedule->command('tranche:detect')
-        ->everyMinute();
-        //->monthly();
-        //->daily();
+      
+        $schedule->command('actualite:send')->everyMinute(); 
+        //$schedule->command('actualite:send')->daily();
+
+        $schedule->command('mensualite:suggest')->everyMinute();
+        //$schedule->command('mensualite:suggest')->monthly();
+
+        $schedule->command('tranche:detect')->everyMinute();
+        //$schedule->command('tranche:detect')->monthly();
+        
+       
     }
 
     /**
